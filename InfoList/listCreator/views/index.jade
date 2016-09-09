@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    include theme
+  body
+    form(action="form", method="post", enctype="multipart/form-data")
+      div.form-group
+        div.col-md-10.browse-text
+          input.form-control( type="text", placeholder="Browse..."	, name="filename", readonly="")
+          input#inputFile(type="file",multiple, name="file")
+        input(type="submit" value="Submit")
+
+    div.container#list-container-footer
+      a.btn.btn-raised.btn-success#list-add-button +
+      a.btn.btn-raised.btn-success#list-delete-button -
+    div.container#list-container
+      - var array = info_array;
+      - for (var i = 0; i < array.length; i++) {
+        - var image = "images/" + array[i]
+          a.btn#list-item
+            img(src="#{image}")
+            div #{i}  ->   #{array[i]}
+      - }

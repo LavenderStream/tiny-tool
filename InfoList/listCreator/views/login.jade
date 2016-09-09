@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		include theme
+	body
+		div.container
+			form(action="users", method="post")
+				div
+					input.form-control#inputEmail(type="name", placeholder="Name", name="username", autocomplete="off")
+	
+				div
+					input.form-control#inputPassword(type="password", placeholder="Password", name="password", autocomplete="off")
+
+				div
+					input.btn.btn-raised.btn-success(value="Login", type="submit", class="#{color}")
